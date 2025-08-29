@@ -1,0 +1,2 @@
+# Simple commit message validation - just run lint-staged
+npm run lint:fix
