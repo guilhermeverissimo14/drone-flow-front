@@ -2,7 +2,7 @@ export interface UserType {
   id: string;
   name: string;
   email: string;
-  role: "SUPER_ADMIN" | "PROSPECTOR";
+  role: UserRole;
   phone: string;
   cpfCnpj: string;
   avatar: string;
@@ -18,3 +18,11 @@ export interface LoginRequest {
   email: string;
   password: string;
 }
+
+export type UserRole =
+  | "ADMIN"
+  | "MANAGER"
+  | "LOCAL_MANAGER"
+  | "FINANCIAL"
+  | "PILOT"
+  | "ASSISTANT";

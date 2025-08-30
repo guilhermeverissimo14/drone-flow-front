@@ -47,10 +47,10 @@ export const isAuthenticated = (): boolean => {
 
 export const isProspector = (): boolean => {
   const { user } = getAuthData();
-  return user?.role === "PROSPECTOR";
+  return user?.role === "MANAGER";
 };
 
 export const isSuperAdmin = (): boolean => {
   const { user } = getAuthData();
-  return user?.role === "SUPER_ADMIN";
+  return user?.role === "ADMIN";
 };
