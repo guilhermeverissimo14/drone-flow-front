@@ -1,5 +1,5 @@
 
-import SignIn from "@/pages/auth/LoginForm";
+import SignIn from "@/pages/auth/LoginPage";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 const AppRoutes = () => {
