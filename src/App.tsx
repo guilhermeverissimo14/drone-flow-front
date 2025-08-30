@@ -1,12 +1,12 @@
 import { ToastContainer } from 'react-toastify';
-import './App.css';
-import AppRoutes from './routes/PrivateRoutes';
 import { AuthProvider } from './contexts/AuthContext';
+import AppRoutes from './routes/AppRoutes';
+import './App.css';
 
 function App() {
 return (
     <AuthProvider>
-      <AppRoutes />
+      <AppRoutes/>
       <ToastContainer
         position="top-right"
         autoClose={5000}
