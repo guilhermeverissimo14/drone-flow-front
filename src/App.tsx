@@ -1,10 +1,11 @@
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 import AppRoutes from './routes/PrivateRoutes';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
 return (
-    <>
+    <AuthProvider>
       <AppRoutes />
       <ToastContainer
         position="top-right"
@@ -19,7 +20,7 @@ return (
         theme="light"
         className="toast-container"
       />
-    </>
+    </AuthProvider>
 )
 }
 
