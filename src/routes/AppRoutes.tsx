@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import SignIn from "@/pages/auth/LoginPage";
 import Home from "@/pages/home/Home";
+import Dashboard from "@/components/layout/DashBoard";
+import PrivateRoute from "./PrivateRoutes";
 
 const AppRoutes = () => {
 	const { isAuthenticated } = useAuth();
@@ -24,12 +26,12 @@ const AppRoutes = () => {
 
 				{/* Rotas privadas */}
 				<Route
-					// path="/"
-					// element={
-					// 	<PrivateRoute>
-					// 		<Dashboard />
-					// 	</PrivateRoute>
-					// }
+					path="/"
+					element={
+						<PrivateRoute>
+							<Dashboard />
+						</PrivateRoute>
+					}
 				>
 					<Route index element={<Home />} />
 					{/* <Route path="users" element={<Users />} />

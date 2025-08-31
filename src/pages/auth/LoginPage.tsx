@@ -22,6 +22,15 @@ export default function SignIn() {
             </video>
             <div className="relative z-10 flex h-screen w-[100%] flex-col items-center justify-center bg-[#255037] lg:bg-gray-100 xl:w-[40%]">
                 <div className="w-[90%] rounded-lg bg-white p-8 shadow-lg xl:w-[600px]">
+                     <div className="text-center mb-6">
+						<h1 className="text-2xl font-bold text-gray-800 mb-2">
+							Bem-vindo de volta!
+						</h1>
+						<p className="text-gray-600 text-sm">
+							Faça login para acessar sua conta
+						</p>
+					</div>
+
                     <SignInForm />
                 </div>
             </div>
