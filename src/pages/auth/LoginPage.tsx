@@ -3,6 +3,7 @@ import Logo from "@/assets/images/logo.png";
 import SignInForm from "./LoginForm";
 import { CardDescription, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
     return (
@@ -59,12 +60,9 @@ export default function SignIn() {
                                 Precisa de ajuda?
                             </a>
                             <span className="hidden sm:inline">•</span>
-                            <a 
-                                href="/esqueci-senha" 
-                                className="hover:text-primary text-muted-foreground transition-colors underline underline-offset-4"
-                            >
-                                Esqueci minha senha
-                            </a>
+                             <Link to="/forgot-password" className="hover:text-primary text-muted-foreground transition-colors underline underline-offset-4">
+                                Esqueceu sua senha?
+                            </Link>
                         </div>
 
                         <div className="text-center">

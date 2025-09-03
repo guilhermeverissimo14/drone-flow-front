@@ -5,6 +5,7 @@ import SignIn from "@/pages/auth/LoginPage";
 import Home from "@/pages/home/Home";
 import Dashboard from "@/components/layout/DashBoard";
 import PrivateRoute from "./PrivateRoutes";
+import ForgotPassword from "@/pages/forgot-password/ForgotPassword";
 
 const AppRoutes = () => {
 	const { isAuthenticated } = useAuth();
@@ -17,12 +18,12 @@ const AppRoutes = () => {
 					path="/login"
 					element={isAuthenticated ? <Navigate to="/" replace /> : <SignIn />}
 				/>
-				{/* <Route
+				<Route
 					path="/forgot-password"
 					element={
 						isAuthenticated ? <Navigate to="/" replace /> : <ForgotPassword />
 					}
-				/> */}
+				/>
 
 				{/* Rotas privadas */}
 				<Route
