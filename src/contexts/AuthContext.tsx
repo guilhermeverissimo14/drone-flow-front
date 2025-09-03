@@ -23,8 +23,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         }
       } catch (error) {
         console.error("Erro ao verificar autenticação:", error);
-        localStorage.removeItem("user");
-        localStorage.removeItem("token");
+        localStorage.removeItem("G:user");
+        localStorage.removeItem("G:token");
       } finally {
         setIsLoading(false);
       }

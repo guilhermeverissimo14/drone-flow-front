@@ -2,8 +2,8 @@ import type { LoginRequest, LoginResponse, UserType } from "@/types/user";
 import { api } from "./api";
 
 export const saveAuthData = (data: LoginResponse) => {
-  localStorage.setItem("token", data.token);
-  localStorage.setItem("user", JSON.stringify(data.user));
+  localStorage.setItem("G:token", data.token);
+  localStorage.setItem("G:user", JSON.stringify(data.user));
 
   const expirationDate = new Date();
   expirationDate.setDate(expirationDate.getDate() + 7);
@@ -13,16 +13,16 @@ export const saveAuthData = (data: LoginResponse) => {
 };
 
 export const clearAuthData = () => {
-  localStorage.removeItem("token");
-  localStorage.removeItem("user");
+  localStorage.removeItem("G:token");
+  localStorage.removeItem("G:user");
 
   document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 };
 
 export const getAuthData = (): { token: string | null; user: UserType | null } => {
-  const token = localStorage.getItem("token");
-  const userStr = localStorage.getItem("user");
+  const token = localStorage.getItem("G:token");
+  const userStr = localStorage.getItem("G:user");
   const user = userStr ? JSON.parse(userStr) : null;
 
   return { token, user };

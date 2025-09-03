@@ -67,7 +67,7 @@ export default function SignInForm() {
 
 				<Button
 					type="submit"
-					className="w-full h-12 mt-6 cursor-pointer"
+					className="w-full h-12 mt-6 cursor-pointer bg-primary"
 					disabled={isLoading}
 				>
 					{isLoading ? (
