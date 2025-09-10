@@ -32,8 +32,8 @@ export default function SignIn() {
                         <img 
                             src={Logo} 
                             alt="DroneFlow - Sistema de Gestão de Drones"
-                            width={130} 
-                            height={50}
+                            width={150} 
+                            height={70}
                             className="object-contain"
                         />
                     </div>
@@ -67,7 +67,7 @@ export default function SignIn() {
 
                         <div className="text-center">
                             <p className="text-xs text-muted-foreground">
-                               ©2025 - GE Drones. Todos os Direitos Reservados.
+                               ©2025 - Dronix - Gestor . Todos os Direitos Reservados.
                             </p>
                         </div>
                     </div>
