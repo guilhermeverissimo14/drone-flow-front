@@ -2,6 +2,8 @@ import { useAuth } from "@/hooks/useAuth";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useTheme } from "@/hooks/useTheme";
+import Icon from "../ui/icon";
 
 interface AppHeaderProps {
   title?: string;
@@ -11,6 +13,7 @@ interface AppHeaderProps {
 
 export const AppHeader = ({ title}: AppHeaderProps) => {
   const { user } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
@@ -23,6 +26,21 @@ export const AppHeader = ({ title}: AppHeaderProps) => {
         </Avatar>
         <h1 className="text-lg font-semibold text-muted-foreground">{title || `Bem-vindo, ${user?.name}!`}</h1>
       </div>
+
+      <div className="ml-auto flex items-center gap-2">
+						<button
+							type="button"
+							onClick={toggleTheme}
+							className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center cursor-pointer hover:bg-secondary/30 transition-colors"
+						>
+							<Icon
+								name={theme === "dark" ? "sun" : "moon"}
+								library="lucide"
+								size={20}
+								className="text-foreground"
+							/>
+						</button>
+					</div>
     </header>
   );
 };
