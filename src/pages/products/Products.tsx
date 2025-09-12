@@ -1,16 +1,17 @@
-import { AppHeader } from "@/components/layout/AppHeader";
-import { AppSidebar } from "@/components/layout/AppSidebar";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { DashboardLayout } from "@/components/layout/DashboardLayout";
 
 export default function Products() {
     return (
-        <SidebarProvider>
-			<AppSidebar activeItem="dashboard" />
-			<SidebarInset>
-				<AppHeader title="Gerenciamento de Produtos" />
-
-				<h1>Produtos</h1>
-			</SidebarInset>
-		</SidebarProvider>
+        <DashboardLayout 
+            activeItem="products"
+            headerTitle="Gestão de Produtos"
+            headerSubtitle="Gerencie seu catálogo de produtos e serviços"
+        >
+            <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                    <h1 className="text-3xl font-bold tracking-tight">Produtos</h1>
+                </div>
+            </div>
+        </DashboardLayout>
     );
 }

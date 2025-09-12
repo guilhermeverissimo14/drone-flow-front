@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import SignIn from "@/pages/auth/LoginPage";
 import Home from "@/pages/home/Home";
-import Dashboard from "@/components/layout/DashBoard";
 import PrivateRoute from "./PrivateRoutes";
 import ForgotPassword from "@/pages/forgot-password/ForgotPassword";
 import Products from "@/pages/products/Products";
@@ -28,20 +27,38 @@ const AppRoutes = () => {
 					}
 				/>
 
-				{/* Rotas privadas */}
 				<Route
 					path="/"
 					element={
 						<PrivateRoute>
-							<Dashboard />
+							<Home />
 						</PrivateRoute>
 					}
-				>
-					<Route index element={<Home />} />
-					<Route path="products" element={<Products />} />
-					<Route path="aircrafts" element={<Aircraft />} />
-					<Route path="users" element={<Users />} />
-				</Route>
+				/>
+				<Route
+					path="/products"
+					element={
+						<PrivateRoute>
+							<Products />
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					path="/aircrafts"
+					element={
+						<PrivateRoute>
+							<Aircraft />
+						</PrivateRoute>
+					}
+				/>
+				<Route
+					path="/users"
+					element={
+						<PrivateRoute>
+							<Users />
+						</PrivateRoute>
+					}
+				/>
 
 				{/* Rota de fallback */}
 				<Route path="*" element={<Navigate to="/" replace />} />

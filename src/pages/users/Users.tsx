@@ -1,16 +1,18 @@
-import { AppHeader } from "@/components/layout/AppHeader";
-import { AppSidebar } from "@/components/layout/AppSidebar";
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { DashboardLayout } from "@/components/layout/DashboardLayout";
 
 export default function Users() {
     return (
-        <SidebarProvider>
-			<AppSidebar activeItem="dashboard" />
-			<SidebarInset>
-				<AppHeader title="Gerenciamento de Usuários" />
-
-				<h1>Usuários</h1>
-			</SidebarInset>
-		</SidebarProvider>
+        <DashboardLayout 
+            activeItem="users"
+            headerTitle="Gestão de Usuários"
+            headerSubtitle="Gerencie usuários e permissões do sistema"
+        >
+            <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                    <h1 className="text-3xl font-bold tracking-tight">Usuários</h1>
+                </div>
+                
+            </div>
+        </DashboardLayout>
     );
 }
