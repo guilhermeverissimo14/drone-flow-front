@@ -18,11 +18,19 @@ interface AppSidebarProps {
 	activeItem?: string;
 }
 
+interface MenuItem {
+    title: string;
+    icon: React.ReactElement;
+    path: string;
+    key: string;
+    showOnlyForSuperAdmin?: boolean; 
+}
+
 export const AppSidebar = ({ activeItem }: AppSidebarProps) => {
 	const { logout, isSuperAdmin } = useAuth();
 	const navigate = useNavigate();
 
-	const adminMenuItems = [
+	const adminMenuItems: MenuItem[] = [
 		{
 			title: "Dashboard",
 			icon: <Icon name="dashboard" size={18} />,
@@ -36,30 +44,18 @@ export const AppSidebar = ({ activeItem }: AppSidebarProps) => {
 			key: "users",
 		},
 		{
-			title: "Parceiros",
-			icon: <Icon name="partners" size={18} />,
-			path: "/partners",
-			key: "partners",
-			showOnlyForSuperAdmin: true,
+			title: "Produtos",
+			icon: <Icon name="package" size={18} />,
+			path: "/products",
+			key: "products",
 		},
 		{
-			title: "Empresas",
-			icon: <Icon name="building" size={18} />,
-			path: "/enterprises",
-			key: "enterprises",
-		},
-		{
-			title: "Planos",
-			icon: <Icon name="file" size={18} />,
-			path: "/plans",
-			key: "plans",
-		},
-		{
-			title: "Relatórios",
-			icon: <Icon name="reports" size={18} />,
-			path: "/reports",
-			key: "reports",
-		},
+			title: "Aeronaves",
+			icon: <Icon name="drone" size={18} />,
+			path: "/aircrafts",
+			key: "aircraft",
+		}
+		
 	];
 
 	const prospectorMenuItems = [

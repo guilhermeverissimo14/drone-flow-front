@@ -6,6 +6,9 @@ import Home from "@/pages/home/Home";
 import Dashboard from "@/components/layout/DashBoard";
 import PrivateRoute from "./PrivateRoutes";
 import ForgotPassword from "@/pages/forgot-password/ForgotPassword";
+import Products from "@/pages/products/Products";
+import Aircraft from "@/pages/aircraft/Aircraft";
+import Users from "@/pages/users/Users";
 
 const AppRoutes = () => {
 	const { isAuthenticated } = useAuth();
@@ -35,13 +38,9 @@ const AppRoutes = () => {
 					}
 				>
 					<Route index element={<Home />} />
-					{/* <Route path="users" element={<Users />} />
-					<Route path="partners" element={<Prospectors />} />
-					<Route path="enterprises" element={<Enterprises />} />
-					<Route path="/enterprises/new" element={<EnterpriseForm />} />
-					<Route path="/enterprises/edit/:id" element={<EnterpriseForm />} />
-					<Route path="/plans" element={<Plans />} />
-					<Route path="reports" element={<Reports />} /> */}
+					<Route path="products" element={<Products />} />
+					<Route path="aircrafts" element={<Aircraft />} />
+					<Route path="users" element={<Users />} />
 				</Route>
 
 				{/* Rota de fallback */}

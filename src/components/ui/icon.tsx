@@ -508,12 +508,14 @@ import {
 	Timer,
 	Hourglass,
 	AlarmClock,
+	Drone,
 } from "lucide-react";
 
 export type IconLibrary = "ant" | "feather" | "fa" | "heroicons" | "lucide";
 
 export type IconName =
 	| "dashboard"
+	| "drone"
 	| "users"
 	| "building"
 	| "partners"
@@ -671,6 +673,7 @@ export type IconName =
 
 const iconMaps: Record<IconLibrary, Record<IconName, IconType>> = {
 	ant: {
+		drone: AiOutlineGlobal,
 		dashboard: AiOutlineDashboard,
 		users: AiOutlineUser,
 		building: AiOutlineBank,
@@ -828,6 +831,7 @@ const iconMaps: Record<IconLibrary, Record<IconName, IconType>> = {
 		alarmClock: AiOutlineClockCircle,
 	},
 	feather: {
+		drone: FiNavigation,
 		dashboard: FiActivity,
 		users: FiUsers,
 		building: FiHome,
@@ -985,6 +989,7 @@ const iconMaps: Record<IconLibrary, Record<IconName, IconType>> = {
 		alarmClock: FiClock,
 	},
 	fa: {
+		drone: FaCompass,
 		dashboard: FaChartLine,
 		users: FaUsers,
 		building: FaBuilding,
@@ -1142,6 +1147,7 @@ const iconMaps: Record<IconLibrary, Record<IconName, IconType>> = {
 		alarmClock: FaClock,
 	},
 	heroicons: {
+		drone: HiOutlineGlobe,
 		dashboard: HiOutlineViewGrid,
 		users: HiOutlineUsers,
 		building: HiOutlineOfficeBuilding,
@@ -1299,6 +1305,7 @@ const iconMaps: Record<IconLibrary, Record<IconName, IconType>> = {
 		alarmClock: HiOutlineClock,
 	},
 	lucide: {
+		drone: Drone,
 		dashboard: LayoutDashboard,
 		users: Users,
 		building: Building,

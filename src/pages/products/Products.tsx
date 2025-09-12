@@ -2,19 +2,15 @@ import { AppHeader } from "@/components/layout/AppHeader";
 import { AppSidebar } from "@/components/layout/AppSidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
-
-const Home = () => {
-	
-	return (
-		<SidebarProvider>
+export default function Products() {
+    return (
+        <SidebarProvider>
 			<AppSidebar activeItem="dashboard" />
 			<SidebarInset>
-				<AppHeader/>
+				<AppHeader title="Gerenciamento de Produtos" />
 
-				<h1>Home</h1>
+				<h1>Produtos</h1>
 			</SidebarInset>
 		</SidebarProvider>
-	);
-};
-
-export default Home;
+    );
+}

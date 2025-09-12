@@ -2,19 +2,15 @@ import { AppHeader } from "@/components/layout/AppHeader";
 import { AppSidebar } from "@/components/layout/AppSidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
-
-const Home = () => {
-	
-	return (
-		<SidebarProvider>
+export default function Users() {
+    return (
+        <SidebarProvider>
 			<AppSidebar activeItem="dashboard" />
 			<SidebarInset>
-				<AppHeader/>
+				<AppHeader title="Gerenciamento de Usuários" />
 
-				<h1>Home</h1>
+				<h1>Usuários</h1>
 			</SidebarInset>
 		</SidebarProvider>
-	);
-};
-
-export default Home;
+    );
+}

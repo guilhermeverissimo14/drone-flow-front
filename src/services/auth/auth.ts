@@ -45,7 +45,7 @@ export const isAuthenticated = (): boolean => {
   return !!token;
 };
 
-export const isProspector = (): boolean => {
+export const isManager = (): boolean => {
   const { user } = getAuthData();
   return user?.role === "MANAGER";
 };

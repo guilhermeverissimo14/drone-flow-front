@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import type { ReactNode } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { AuthContext, type AuthContextType } from "./auth";
-import { login as apiLogin, logout as apiLogout, getAuthData, isSuperAdmin as checkIsSuperAdmin, isProspector as checkIsProspector } from "@/services/auth/auth";
+import { login as apiLogin, logout as apiLogout, getAuthData, isSuperAdmin as checkIsSuperAdmin, isManager as checkIsProspector } from "@/services/auth/auth";
 import type { UserType } from "@/types/user";
 
 interface AuthProviderProps {
