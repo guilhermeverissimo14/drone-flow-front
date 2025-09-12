@@ -27,8 +27,8 @@ export const AircraftCard = ({
 							className="hover:opacity-70 transition-opacity"
 							onClick={() => onToggleStatus(aircraft)}
 						>
-							<Badge variant={aircraft.active ? "default" : "secondary"}>
-								{aircraft.active ? "Ativo" : "Inativo"}
+							<Badge variant={aircraft.status === "ACTIVE" ? "default" : "secondary"}>
+								{aircraft.status === "ACTIVE" ? "Ativo" : "Inativo"}
 							</Badge>
 						</button>
 					</div>
@@ -44,13 +44,6 @@ export const AircraftCard = ({
 					<p className="text-sm text-muted-foreground">
 						Ano: {aircraft.year}
 					</p>
-					<Badge 
-						variant={aircraft.status === "DISPONIVEL" ? "default" : 
-								aircraft.status === "MANUTENCAO" ? "destructive" : "secondary"}
-						className="text-xs"
-					>
-						{aircraft.status}
-					</Badge>
 				</div>
 				<div className="flex gap-2">
 					<Button
