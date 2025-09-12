@@ -128,6 +128,7 @@ export default function Aircraft() {
 							isLoading={isLoading}
 							onPageChange={handlePageChange}
 							onPageSizeChange={handlePageSizeChange}
+							onView={() => { }}
 							onEdit={handleEditAircraft}
 							onDelete={handleDeleteAircraft}
 							onToggleStatus={handleToggleAircraftStatus}

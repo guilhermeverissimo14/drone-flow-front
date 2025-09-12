@@ -5,6 +5,7 @@ import type { Aircraft } from "@/types/aircraft";
 
 interface AircraftCardProps {
 	aircraft: Aircraft;
+    onView: (aircraft: Aircraft) => void;
 	onEdit: (aircraft: Aircraft) => void;
 	onDelete: (aircraft: Aircraft) => void;
 	onToggleStatus: (aircraft: Aircraft) => void;
@@ -12,6 +13,7 @@ interface AircraftCardProps {
 
 export const AircraftCard = ({
 	aircraft,
+    onView,
 	onEdit,
 	onDelete,
 	onToggleStatus,
@@ -21,7 +23,9 @@ export const AircraftCard = ({
 			<div className="flex items-start justify-between">
 				<div className="space-y-2 flex-1">
 					<div className="flex items-center gap-2">
-						<h3 className="font-semibold">{aircraft.name}</h3>
+						<h3 className="font-semibold text-muted-foreground">
+                            {aircraft.name.length > 17 ? `${aircraft.name.slice(0, 17)}...` : aircraft.name}
+                        </h3>
 						<button
 							type="button"
 							className="hover:opacity-70 transition-opacity"
@@ -46,13 +50,23 @@ export const AircraftCard = ({
 					</p>
 				</div>
 				<div className="flex gap-2">
+
+                    <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-8 w-8 p-0"
+                        onClick={() => onView(aircraft)}
+                    >
+                        <Icon name="eye" size={16} />
+                    </Button>
+
 					<Button
 						variant="ghost"
 						size="sm"
 						className="h-8 w-8 p-0"
 						onClick={() => onEdit(aircraft)}
 					>
-						<Icon name="settings" size={16} />
+						<Icon name="edit" size={16} />
 					</Button>
 					<Button
 						variant="ghost"

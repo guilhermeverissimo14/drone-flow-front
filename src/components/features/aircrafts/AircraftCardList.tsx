@@ -11,6 +11,7 @@ interface AircraftCardListProps {
 	onPageChange?: (page: number) => void;
 	onPageSizeChange?: (pageSize: number) => void;
 	onEdit: (aircraft: Aircraft) => void;
+    onView: (aircraft: Aircraft) => void;
 	onDelete: (aircraft: Aircraft) => void;
 	onToggleStatus: (aircraft: Aircraft) => void;
 }
@@ -21,6 +22,7 @@ export function AircraftCardList({
 	isLoading = false,
 	onPageChange,
 	onPageSizeChange,
+    onView,
 	onEdit,
 	onDelete,
 	onToggleStatus,
@@ -73,6 +75,7 @@ export function AircraftCardList({
 						onEdit={onEdit}
 						onDelete={onDelete}
 						onToggleStatus={onToggleStatus}
+                        onView={onView}
 					/>
 				))}
 			</div>
