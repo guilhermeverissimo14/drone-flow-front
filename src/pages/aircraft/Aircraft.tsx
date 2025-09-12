@@ -23,7 +23,7 @@ export default function Aircraft() {
 
 	const isMobile = useIsMobile();
 
-	const { data, isLoading, isError } = useQuery({
+	const { data, isLoading } = useQuery({
 		queryKey: ["aircraft", currentPage, pageSize],
 		queryFn: () => getAircraft(currentPage, pageSize),
 	});
@@ -47,7 +47,7 @@ export default function Aircraft() {
 		setIsSheetOpen(true);
 	}
 
-	const handleDeleteAircraft = (aircraft: Aircraft) => {
+	const handleDeleteAircraft = () => {
 		// Implement delete functionality here
 	}
 
@@ -65,9 +65,9 @@ export default function Aircraft() {
 	};
 
 	const columns = createColumns({
-		onView: (aircraft) => { },
+		onView: () => { },
 		onEdit: (aircraft) => handleEditAircraft(aircraft),
-		onDelete: (aircraft) => handleDeleteAircraft(aircraft),
+		onDelete: () => handleDeleteAircraft(),
 		onToggleStatus: (aircraft) => handleToggleAircraftStatus(aircraft),
 	});
 
@@ -120,7 +120,6 @@ export default function Aircraft() {
 				</div>
 
 				<div className="space-y-4">
-
 
 					{isMobile ? (
 						<AircraftCardList

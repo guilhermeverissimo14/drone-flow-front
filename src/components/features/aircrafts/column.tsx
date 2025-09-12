@@ -1,20 +1,8 @@
 import { type ColumnDef } from "@tanstack/react-table";
-import { Badge } from "@/components/ui/badge";
 import type { Aircraft } from "@/types/aircraft";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
-
-const getStatusBadge = (active: boolean) => {
-	return (
-		<Badge
-			variant={active ? "default" : "destructive"}
-			style={{ width: "70px" }}
-		>
-			{active ? "Ativo" : "Inativo"}
-		</Badge>
-	);
-};
 
 interface ColumnProps {
 	onView: (aircraft: Aircraft) => void;
@@ -25,13 +13,13 @@ interface ColumnProps {
 
 export const createColumns = ({ onView, onEdit, onDelete, onToggleStatus }: ColumnProps): ColumnDef<Aircraft>[] => [
 	{
-		accessorKey: "serialNumber",
-		header: "Número de Série",
+		accessorKey: "registration",
+		header: "Prefixo",
 		cell: ({ row }: { row: { original: Aircraft } }) => {
 			const aircraft = row.original;
 			return (
 				<div className="font-mono font-medium text-primary">
-					{aircraft.serialNumber}
+					{aircraft.registration}
 				</div>
 			);
 		},
@@ -56,18 +44,6 @@ export const createColumns = ({ onView, onEdit, onDelete, onToggleStatus }: Colu
 			return (
 				<div className="font-medium">
 					{aircraft.model}
-				</div>
-			);
-		},
-	},
-	{
-		accessorKey: "registration",
-		header: "Registro ANAC",
-		cell: ({ row }: { row: { original: Aircraft } }) => {
-			const aircraft = row.original;
-			return (
-				<div className="font-mono font-medium">
-					{aircraft.registration}
 				</div>
 			);
 		},
